@@ -90,9 +90,14 @@ def extract_sql_query(text):
 
 
 llm = ChatOpenAI(
-    model="mistralai/mistral-7b-instruct",
+    #model="mistralai/mistral-7b-instruct",
+    model="gpt-4o-mini",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENAI_API_KEY")
+    default_headers={
+        "HTTP-Referer": "http://localhost",
+        "X-Title": "AI-SQL-Generator"
+    }
 )
 
 # Your database schema description
@@ -234,8 +239,11 @@ def ask_question():
             question=user_question
         )
         response = llm.invoke(messages)
+        #print('response',response)
         raw_generated_sql = response.content.strip()
         parsed_sql = extract_sql_query(raw_generated_sql)
+
+        print('parsed_sql', parsed_sql)
 
         if not validate_query(parsed_sql):
             return jsonify({
