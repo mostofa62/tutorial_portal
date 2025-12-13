@@ -3,6 +3,14 @@
 ### it has teacher, student, admin, course, lesson, quiz and used ai for search in home page to gether information from this portal about course, teacher, students
 ## Database Part
 -------------------
+# Download and Install PostGreSQL Database 15 and python 3.12.5 version
+### Download and intall python 3.12.5 version its run perfect with this
+
+
+### Download `PostgreSQL 15` version
+### Install and browse using `pgAdmin` tools
+### Set and Easy password for user `postgres` like `1234`
+
 # Create database `tutorial_portal`
 ### Create user and password same: `tutorial_portal`
 ### Give super admin permission / priviliages to that user `tutorial_portal`
@@ -26,3 +34,4 @@
 ------------------
 ### `openrouter.ai` go here and get an api key
 ### put that key in `.env`, variable name is `OPENAI_API_KEY`
+
