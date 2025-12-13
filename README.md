@@ -36,7 +36,7 @@
 
 ### first upgrade `pip` if you see upgrade notice
 
-### `  `
+### `python -m pip install --upgrade pip`
 
 ### `pip install -r requirement.txt`
 
